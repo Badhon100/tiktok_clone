@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/const.dart';
+import 'package:tiktok_clone/view/screens/auth/login_screens.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,15 +9,15 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Tiktok clone', 
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: backgroundColor
       ),
-      home: const Text('Flutter Demo Home Page'),
+      home: LoginScreen(),
     );
   }
 }
