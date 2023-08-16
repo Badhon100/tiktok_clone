@@ -44,7 +44,8 @@ class SignUpScreen extends StatelessWidget {
                 bottom: -10,
                 left: 80,
                 child: IconButton(
-                  onPressed: ()=> authController.pickImage(),
+                  onPressed: ()=>authController.pickImage(),
+                  // onPressed: ()=> authController.pickImage(),
                   icon: Icon(Icons.add_a_photo, color: buttonColor,),
                 )
               )
@@ -92,10 +93,10 @@ class SignUpScreen extends StatelessWidget {
               borderRadius: const BorderRadius.all(Radius.circular(5))
             ),
             child: InkWell(
-              onTap: ()=> authController.register(
+              onTap: ()=> authController.registerUser(
                 _userNameController.text, 
                 _emailController.text, 
-                _passwordController.text, 
+                _passwordController.text,
                 authController.profilePhoto
               ),
               child: const Center(
@@ -119,7 +120,9 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: (){},
+                onTap: (){
+                  
+                },
                 child: Text(
                   "Login ",
                   style: TextStyle(
