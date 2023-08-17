@@ -6,8 +6,6 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tiktok_clone/const.dart';
 import 'package:tiktok_clone/model/user_model.dart' as model;
-import 'package:tiktok_clone/view/screens/home_screen.dart';
-
 class AuthController extends GetxController{
   static AuthController instance = Get.find();
   late Rx<File?> _pickedImage;
