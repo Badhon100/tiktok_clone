@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tiktok_clone/const.dart';
 import 'package:tiktok_clone/model/user_model.dart' as model;
+import 'package:tiktok_clone/view/screens/home_screen.dart';
 
 class AuthController extends GetxController{
   static AuthController instance = Get.find();
@@ -66,6 +67,24 @@ class AuthController extends GetxController{
         );
       }
     } catch (e) {
+      Get.snackbar(
+        'Error Creating Account',
+        e.toString(),
+      );
+    }
+  }
+
+  void loginUser(String email, String password)async{
+    try{
+      if(email.isNotEmpty && password.isNotEmpty){
+        await firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+      }else{
+        Get.snackbar(
+        'Error Creating Account',
+        "Fill all the fields",
+        );
+      }
+    }catch (e){
       Get.snackbar(
         'Error Creating Account',
         e.toString(),
