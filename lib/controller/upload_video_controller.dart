@@ -58,7 +58,7 @@ class UploadVideoController extends GetxController {
         songName: songName,
         caption: caption,
         videoUrl: videoUrl,
-        profilePhoto: (userDoc.data()! as Map<String, dynamic>)['profilePhoto'],
+        profilePhoto: 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8fDA%3D&w=1000&q=80',
         thumbnail: thumbnail,
       );
 
@@ -67,10 +67,7 @@ class UploadVideoController extends GetxController {
           );
       Get.back();
     } catch (e) {
-      Get.snackbar(
-        'Error Uploading Video',
-        e.toString(),
-      );
+      print(e);
     }
   }
 }
